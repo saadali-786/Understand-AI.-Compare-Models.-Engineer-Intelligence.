@@ -1,0 +1,2560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="NEXORA AI — Intelligent automation, AI agents, analytics and connected workflows for modern businesses.">
+    <meta name="author" content="NEXORA AI">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#070914">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="NEXORA AI | Intelligent Automation Platform">
+    <meta property="og:description" content="Connect AI agents, workflows and analytics in one intelligent automation platform.">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <title>NEXORA AI | Intelligent Automation Platform</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+
+        :root {
+            --primary: #6c63ff;
+            --primary-dark: #5148e5;
+            --secondary: #00d4ff;
+            --accent: #8b5cf6;
+
+            --dark: #070914;
+            --dark-2: #0c1020;
+            --card: rgba(255,255,255,0.055);
+
+            --text: #f5f7ff;
+            --muted: #a5acc5;
+
+            --border: rgba(255,255,255,0.10);
+
+            --shadow: 0 20px 60px rgba(0,0,0,0.35);
+
+            --gradient:
+                linear-gradient(
+                    135deg,
+                    #6c63ff,
+                    #00d4ff
+                );
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+
+            background:
+                radial-gradient(
+                    circle at 10% 10%,
+                    rgba(108,99,255,0.14),
+                    transparent 30%
+                ),
+                radial-gradient(
+                    circle at 90% 20%,
+                    rgba(0,212,255,0.10),
+                    transparent 28%
+                ),
+                var(--dark);
+
+            color: var(--text);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        button {
+            font-family: inherit;
+        }
+
+        .container {
+            width: min(1180px, 92%);
+            margin: auto;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--dark);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 20px;
+        }
+
+        /* =========================
+           NAVIGATION
+        ========================== */
+
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+
+            background: rgba(7,9,20,0.72);
+            backdrop-filter: blur(18px);
+
+            border-bottom:
+                1px solid rgba(255,255,255,0.06);
+
+            transition: .3s;
+        }
+
+        nav {
+            height: 78px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 11px;
+
+            font-family: "Space Grotesk";
+            font-size: 22px;
+            font-weight: 700;
+        }
+
+        .logo-icon {
+            width: 38px;
+            height: 38px;
+
+            display: grid;
+            place-items: center;
+
+            border-radius: 12px;
+
+            background: var(--gradient);
+
+            box-shadow:
+                0 0 30px rgba(108,99,255,0.35);
+        }
+
+        .logo span {
+            background:
+                linear-gradient(
+                    90deg,
+                    #fff,
+                    #9aa4ff
+                );
+
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #c4c9dd;
+            font-size: 14px;
+            transition: .3s;
+        }
+
+        .nav-links a:hover {
+            color: white;
+        }
+
+        .nav-button {
+            padding: 11px 20px;
+
+            border-radius: 10px;
+
+            background: var(--gradient);
+
+            font-size: 14px;
+            font-weight: 700;
+
+            transition: .3s;
+
+            box-shadow:
+                0 10px 30px rgba(108,99,255,0.22);
+        }
+
+        .nav-button:hover {
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 15px 35px rgba(108,99,255,0.4);
+        }
+
+        .menu-btn {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--text);
+            background: transparent;
+            border: 0;
+            padding: 8px;
+            border-radius: 8px;
+        }
+
+        .menu-btn:focus-visible,
+        a:focus-visible,
+        button:focus-visible {
+            outline: 2px solid var(--secondary);
+            outline-offset: 4px;
+        }
+
+        /* =========================
+           HERO
+        ========================== */
+
+        .hero {
+            min-height: 100vh;
+
+            display: flex;
+            align-items: center;
+
+            padding-top: 110px;
+
+            position: relative;
+        }
+
+        .hero-grid {
+            display: grid;
+
+            grid-template-columns:
+                1.1fr .9fr;
+
+            gap: 70px;
+
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+
+            padding: 8px 14px;
+
+            border:
+                1px solid rgba(108,99,255,.3);
+
+            background:
+                rgba(108,99,255,.08);
+
+            border-radius: 100px;
+
+            color: #b9b5ff;
+
+            font-size: 13px;
+            font-weight: 600;
+
+            margin-bottom: 25px;
+        }
+
+        .badge-dot {
+            width: 7px;
+            height: 7px;
+
+            border-radius: 50%;
+
+            background: #4ade80;
+
+            box-shadow:
+                0 0 12px #4ade80;
+        }
+
+        .hero h1 {
+            font-family: "Space Grotesk";
+
+            font-size:
+                clamp(48px,7vw,82px);
+
+            line-height: 1.02;
+
+            letter-spacing: -3px;
+
+            margin-bottom: 25px;
+        }
+
+        .gradient-text {
+            background:
+                linear-gradient(
+                    90deg,
+                    #8b82ff,
+                    #00d4ff,
+                    #b388ff
+                );
+
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .hero-description {
+            max-width: 600px;
+
+            color: var(--muted);
+
+            font-size: 17px;
+
+            margin-bottom: 35px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 14px 22px;
+
+            border-radius: 12px;
+
+            font-size: 14px;
+            font-weight: 700;
+
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+
+            transition: .3s;
+
+            cursor: pointer;
+
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--gradient);
+            color: white;
+
+            box-shadow:
+                0 15px 40px rgba(108,99,255,.25);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+        }
+
+        .btn-outline {
+            border:
+                1px solid var(--border);
+
+            background:
+                rgba(255,255,255,.035);
+
+            color: white;
+        }
+
+        .btn-outline:hover {
+            background:
+                rgba(255,255,255,.08);
+        }
+
+        /* =========================
+           AI VISUAL
+        ========================== */
+
+        .ai-visual {
+            position: relative;
+
+            height: 500px;
+
+            display: grid;
+            place-items: center;
+        }
+
+        .orb {
+            position: relative;
+
+            width: 330px;
+            height: 330px;
+
+            border-radius: 50%;
+
+            background:
+                radial-gradient(
+                    circle at 35% 30%,
+                    #b7b2ff,
+                    #6c63ff 35%,
+                    #211d70 70%,
+                    transparent 72%
+                );
+
+            filter:
+                drop-shadow(
+                    0 0 80px
+                    rgba(108,99,255,.65)
+                );
+
+            animation:
+                float 5s ease-in-out infinite;
+        }
+
+        .orb::before {
+            content: "";
+
+            position: absolute;
+
+            top: 50%;
+            left: 50%;
+
+            transform: translate(-50%,-50%);
+
+            width: 430px;
+            height: 430px;
+
+            border-radius: 50%;
+
+            border:
+                1px solid rgba(108,99,255,.25);
+
+            animation:
+                rotate 18s linear infinite;
+        }
+
+        .orb::after {
+            content: "";
+
+            position: absolute;
+
+            top: 50%;
+            left: 50%;
+
+            transform: translate(-50%,-50%);
+
+            width: 500px;
+            height: 500px;
+
+            border-radius: 50%;
+
+            border:
+                1px dashed rgba(0,212,255,.18);
+
+            animation:
+                rotate-reverse 25s linear infinite;
+        }
+
+        .floating-card {
+            position: absolute;
+
+            padding: 17px 20px;
+
+            border:
+                1px solid var(--border);
+
+            background:
+                rgba(13,17,35,.78);
+
+            backdrop-filter: blur(16px);
+
+            border-radius: 15px;
+
+            box-shadow: var(--shadow);
+
+            animation:
+                float 4s ease-in-out infinite;
+        }
+
+        .card-1 {
+            top: 65px;
+            left: 0;
+        }
+
+        .card-2 {
+            right: 0;
+            top: 150px;
+
+            animation-delay: 1s;
+        }
+
+        .card-3 {
+            bottom: 50px;
+            left: 70px;
+
+            animation-delay: 2s;
+        }
+
+        .floating-card small {
+            color: var(--muted);
+            display: block;
+            margin-bottom: 3px;
+        }
+
+        .floating-card strong {
+            font-size: 18px;
+        }
+
+        /* =========================
+           STATS
+        ========================== */
+
+        .stats {
+            padding: 40px 0;
+        }
+
+        .stats-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(4,1fr);
+
+            gap: 1px;
+
+            background: var(--border);
+
+            border:
+                1px solid var(--border);
+
+            border-radius: 18px;
+
+            overflow: hidden;
+        }
+
+        .stat {
+            background:
+                rgba(255,255,255,.025);
+
+            padding: 30px;
+
+            text-align: center;
+        }
+
+        .stat h3 {
+            font-family: "Space Grotesk";
+
+            font-size: 30px;
+
+            margin-bottom: 5px;
+        }
+
+        .stat p {
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        /* =========================
+           GENERAL SECTIONS
+        ========================== */
+
+        section {
+            padding: 110px 0;
+        }
+
+        .section-heading {
+            text-align: center;
+
+            max-width: 700px;
+
+            margin:
+                0 auto 60px;
+        }
+
+        .section-label {
+            color: #8d86ff;
+
+            font-size: 12px;
+            font-weight: 800;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 12px;
+        }
+
+        .section-heading h2 {
+            font-family: "Space Grotesk";
+
+            font-size:
+                clamp(34px,5vw,52px);
+
+            line-height: 1.1;
+
+            margin-bottom: 18px;
+        }
+
+        .section-heading p {
+            color: var(--muted);
+        }
+
+        /* =========================
+           FEATURES
+        ========================== */
+
+        .features-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3,1fr);
+
+            gap: 20px;
+        }
+
+        .feature-card {
+            position: relative;
+
+            padding: 32px;
+
+            border:
+                1px solid var(--border);
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,.055),
+                    rgba(255,255,255,.015)
+                );
+
+            border-radius: 20px;
+
+            overflow: hidden;
+
+            transition:
+                transform .35s,
+                border-color .35s;
+        }
+
+        .feature-card::before {
+            content: "";
+
+            position: absolute;
+
+            width: 150px;
+            height: 150px;
+
+            background: var(--primary);
+
+            filter: blur(100px);
+
+            opacity: 0;
+
+            transition: .4s;
+
+            top: -60px;
+            right: -60px;
+        }
+
+        .feature-card:hover {
+            transform:
+                translateY(-8px);
+
+            border-color:
+                rgba(108,99,255,.45);
+        }
+
+        .feature-card:hover::before {
+            opacity: .18;
+        }
+
+        .feature-icon {
+            width: 52px;
+            height: 52px;
+
+            display: grid;
+            place-items: center;
+
+            border-radius: 14px;
+
+            background:
+                rgba(108,99,255,.12);
+
+            color: #a8a2ff;
+
+            font-size: 20px;
+
+            margin-bottom: 25px;
+        }
+
+        .feature-card h3 {
+            font-size: 19px;
+            margin-bottom: 10px;
+        }
+
+        .feature-card p {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        /* =========================
+           WORKFLOW
+        ========================== */
+
+        .workflow {
+            background:
+                rgba(255,255,255,.018);
+        }
+
+        .workflow-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(4,1fr);
+
+            gap: 18px;
+
+            position: relative;
+        }
+
+        .workflow-step {
+            text-align: center;
+            padding: 25px;
+        }
+
+        .step-number {
+            width: 58px;
+            height: 58px;
+
+            margin:
+                0 auto 20px;
+
+            display: grid;
+            place-items: center;
+
+            border-radius: 50%;
+
+            background: var(--gradient);
+
+            font-weight: 800;
+
+            box-shadow:
+                0 0 35px
+                rgba(108,99,255,.25);
+        }
+
+        .workflow-step h3 {
+            margin-bottom: 8px;
+        }
+
+        .workflow-step p {
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        /* =========================
+           ANALYTICS
+        ========================== */
+
+        .dashboard {
+            display: grid;
+
+            grid-template-columns:
+                .9fr 1.1fr;
+
+            gap: 25px;
+
+            align-items: stretch;
+        }
+
+        .dashboard-info {
+            padding: 45px;
+
+            border:
+                1px solid var(--border);
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(108,99,255,.10),
+                    rgba(255,255,255,.025)
+                );
+
+            border-radius: 22px;
+        }
+
+        .dashboard-info h2 {
+            font-family: "Space Grotesk";
+
+            font-size: 38px;
+
+            line-height: 1.15;
+
+            margin-bottom: 20px;
+        }
+
+        .dashboard-info p {
+            color: var(--muted);
+            margin-bottom: 25px;
+        }
+
+        .check-list {
+            list-style: none;
+        }
+
+        .check-list li {
+            display: flex;
+
+            gap: 10px;
+
+            align-items: center;
+
+            margin: 12px 0;
+
+            font-size: 14px;
+        }
+
+        .check-list i {
+            color: #4ade80;
+        }
+
+        .dashboard-panel {
+            padding: 25px;
+
+            border:
+                1px solid var(--border);
+
+            border-radius: 22px;
+
+            background: #0d1224;
+
+            box-shadow: var(--shadow);
+        }
+
+        .panel-header {
+            display: flex;
+
+            justify-content: space-between;
+            align-items: center;
+
+            margin-bottom: 25px;
+        }
+
+        .panel-title {
+            font-weight: 700;
+        }
+
+        .status {
+            padding: 6px 10px;
+
+            background:
+                rgba(74,222,128,.1);
+
+            color: #4ade80;
+
+            border-radius: 100px;
+
+            font-size: 11px;
+        }
+
+        .chart {
+            height: 240px;
+
+            display: flex;
+
+            align-items: end;
+
+            gap: 12px;
+
+            padding:
+                20px 10px 0;
+
+            border-bottom:
+                1px solid var(--border);
+        }
+
+        .bar {
+            flex: 1;
+
+            background:
+                linear-gradient(
+                    to top,
+                    #5148e5,
+                    #00d4ff
+                );
+
+            border-radius:
+                7px 7px 0 0;
+
+            min-height: 30px;
+
+            animation:
+                grow 1.2s ease;
+        }
+
+        /* =========================
+           INTEGRATIONS
+        ========================== */
+
+        .integrations-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(4,1fr);
+
+            gap: 16px;
+        }
+
+        .integration {
+            padding: 28px;
+
+            text-align: center;
+
+            border:
+                1px solid var(--border);
+
+            background:
+                rgba(255,255,255,.025);
+
+            border-radius: 18px;
+
+            transition: .3s;
+        }
+
+        .integration:hover {
+            transform: translateY(-5px);
+
+            border-color:
+                rgba(108,99,255,.45);
+        }
+
+        .integration i {
+            font-size: 30px;
+
+            margin-bottom: 14px;
+
+            color: #aaa5ff;
+        }
+
+        .integration h3 {
+            font-size: 15px;
+        }
+
+        .integration p {
+            color: var(--muted);
+            font-size: 12px;
+            margin-top: 5px;
+        }
+
+        /* =========================
+           SECURITY
+        ========================== */
+
+        .security-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3,1fr);
+
+            gap: 20px;
+        }
+
+        .security-card {
+            padding: 30px;
+
+            border:
+                1px solid var(--border);
+
+            border-radius: 20px;
+
+            background:
+                rgba(255,255,255,.025);
+        }
+
+        .security-card i {
+            color: #8f88ff;
+
+            font-size: 24px;
+
+            margin-bottom: 20px;
+        }
+
+        .security-card h3 {
+            margin-bottom: 10px;
+        }
+
+        .security-card p {
+            color: var(--muted);
+
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           PRICING
+        ========================== */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 20px;
+            align-items: stretch;
+        }
+
+        .price-card {
+            display: flex;
+            flex-direction: column;
+            padding: 30px;
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            background: rgba(255,255,255,.03);
+            transition: transform .3s ease, border-color .3s ease;
+        }
+
+        .price-card:hover { transform: translateY(-6px); }
+        .price-card.featured {
+            border-color: rgba(108,99,255,.65);
+            background: linear-gradient(160deg, rgba(108,99,255,.16), rgba(255,255,255,.035));
+            box-shadow: 0 18px 50px rgba(108,99,255,.12);
+        }
+
+        .price-card .plan-label {
+            color: #b9b5ff;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .price-card h3 { margin: 12px 0 8px; font-size: 22px; }
+        .price-card .plan-description { color: var(--muted); font-size: 14px; min-height: 48px; }
+        .price-card .price { margin: 22px 0; font: 700 34px "Space Grotesk", sans-serif; }
+        .price-card .price span { color: var(--muted); font: 400 13px "Inter", sans-serif; }
+        .price-card ul { list-style: none; margin: 0 0 26px; flex: 1; }
+        .price-card li { margin: 11px 0; color: #dce0f2; font-size: 14px; }
+        .price-card li i { color: #4ade80; margin-right: 8px; }
+        .price-card .btn { justify-content: center; }
+
+        /* =========================
+           TESTIMONIALS / TRUST
+        ========================== */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 20px;
+        }
+
+        .testimonial-card {
+            padding: 28px;
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            background: rgba(255,255,255,.03);
+        }
+
+        .testimonial-stars { color: #fbbf24; letter-spacing: 3px; margin-bottom: 16px; }
+        .testimonial-card blockquote { color: #dce0f2; font-size: 14px; margin-bottom: 22px; }
+        .testimonial-person { display: flex; align-items: center; gap: 12px; }
+        .testimonial-avatar {
+            width: 42px; height: 42px; border-radius: 50%;
+            display: grid; place-items: center; font-weight: 800;
+            background: var(--gradient); color: white;
+        }
+        .testimonial-person strong { display: block; font-size: 13px; }
+        .testimonial-person small { display: block; color: var(--muted); font-size: 12px; }
+
+        /* =========================
+           CTA
+        ========================== */
+
+        .cta {
+            padding: 80px 40px;
+
+            text-align: center;
+
+            border:
+                1px solid
+                rgba(108,99,255,.25);
+
+            border-radius: 28px;
+
+            background:
+                radial-gradient(
+                    circle at center,
+                    rgba(108,99,255,.18),
+                    rgba(255,255,255,.025)
+                );
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+        .cta h2 {
+            font-family: "Space Grotesk";
+
+            font-size:
+                clamp(35px,5vw,55px);
+
+            margin-bottom: 15px;
+        }
+
+        .cta p {
+            color: var(--muted);
+
+            max-width: 600px;
+
+            margin:
+                0 auto 28px;
+        }
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer {
+            border-top:
+                1px solid var(--border);
+
+            padding:
+                65px 0 25px;
+
+            margin-top: 80px;
+        }
+
+        .footer-grid {
+            display: grid;
+
+            grid-template-columns:
+                2fr 1fr 1fr 1fr;
+
+            gap: 40px;
+
+            margin-bottom: 50px;
+        }
+
+        .footer-brand p {
+            color: var(--muted);
+
+            max-width: 350px;
+
+            margin-top: 15px;
+
+            font-size: 14px;
+        }
+
+        .footer-column h4 {
+            margin-bottom: 18px;
+        }
+
+        .footer-column a {
+            display: block;
+
+            color: var(--muted);
+
+            font-size: 13px;
+
+            margin: 9px 0;
+
+            transition: .3s;
+        }
+
+        .footer-column a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top:
+                1px solid var(--border);
+
+            padding-top: 22px;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            color: #747b94;
+
+            font-size: 12px;
+        }
+
+        /* =========================
+           ANIMATIONS
+        ========================== */
+
+        @keyframes float {
+
+            0%,100% {
+                transform:
+                    translateY(0);
+            }
+
+            50% {
+                transform:
+                    translateY(-15px);
+            }
+        }
+
+        @keyframes rotate {
+
+            from {
+                transform:
+                    translate(-50%,-50%)
+                    rotate(0deg);
+            }
+
+            to {
+                transform:
+                    translate(-50%,-50%)
+                    rotate(360deg);
+            }
+        }
+
+        @keyframes rotate-reverse {
+
+            from {
+                transform:
+                    translate(-50%,-50%)
+                    rotate(360deg);
+            }
+
+            to {
+                transform:
+                    translate(-50%,-50%)
+                    rotate(0deg);
+            }
+        }
+
+        @keyframes grow {
+
+            from {
+                height: 0;
+            }
+        }
+
+        .reveal {
+            opacity: 0;
+
+            transform:
+                translateY(30px);
+
+            transition:
+                .8s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+
+            transform:
+                translateY(0);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                scroll-behavior: auto !important;
+                animation-duration: .01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: .01ms !important;
+            }
+            .reveal { opacity: 1; transform: none; }
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================== */
+
+        @media (max-width: 900px) {
+
+            .nav-links {
+                position: absolute;
+
+                top: 78px;
+                left: 0;
+
+                width: 100%;
+
+                display: none;
+
+                flex-direction: column;
+
+                padding: 25px;
+
+                background:
+                    rgba(7,9,20,.97);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .menu-btn {
+                display: block;
+            }
+
+            .nav-button {
+                display: none;
+            }
+
+            .hero-grid,
+            .dashboard {
+                grid-template-columns: 1fr;
+            }
+
+            .ai-visual {
+                height: 400px;
+            }
+
+            .features-grid,
+            .security-grid,
+            .pricing-grid,
+            .testimonials-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .workflow-grid {
+                grid-template-columns:
+                    repeat(2,1fr);
+            }
+
+            .integrations-grid {
+                grid-template-columns:
+                    repeat(2,1fr);
+            }
+
+            .footer-grid {
+                grid-template-columns:
+                    repeat(2,1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .hero h1 {
+                letter-spacing: -2px;
+            }
+
+            .features-grid,
+            .security-grid,
+            .workflow-grid,
+            .stats-grid,
+            .integrations-grid,
+            .footer-grid,
+            .pricing-grid,
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding-top: 130px;
+            }
+
+            .orb {
+                width: 230px;
+                height: 230px;
+            }
+
+            .floating-card {
+                transform: scale(.85);
+            }
+
+            .card-1 {
+                left: -15px;
+            }
+
+            .card-2 {
+                right: -15px;
+            }
+
+            .dashboard-info {
+                padding: 30px;
+            }
+
+            .cta {
+                padding: 55px 20px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="container">
+
+        <nav>
+
+            <a href="#home" class="logo">
+
+                <div class="logo-icon">
+                    <i class="fa-solid fa-brain"></i>
+                </div>
+
+                <span>NEXORA AI</span>
+
+            </a>
+
+            <ul class="nav-links" id="navLinks">
+
+                <li>
+                    <a href="#home">Home</a>
+                </li>
+
+                <li>
+                    <a href="#features">Solutions</a>
+                </li>
+
+                <li>
+                    <a href="#workflow">How It Works</a>
+                </li>
+
+                <li>
+                    <a href="#analytics">Analytics</a>
+                </li>
+
+                <li>
+                    <a href="#integrations">Integrations</a>
+                </li>
+                <li>
+                    <a href="#pricing">Pricing</a>
+                </li>
+
+            </ul>
+
+            <a href="#contact"
+               class="nav-button">
+                Get Started
+            </a>
+
+            <button class="menu-btn" id="menuBtn" type="button"
+                    aria-label="Open navigation menu" aria-controls="navLinks"
+                    aria-expanded="false">
+                <i class="fa-solid fa-bars" aria-hidden="true"></i>
+            </button>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+<main>
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+    <div class="container">
+
+        <div class="hero-grid">
+
+            <div class="hero-content reveal">
+
+                <div class="badge">
+
+                    <span class="badge-dot"></span>
+
+                    AI AUTOMATION PLATFORM
+
+                </div>
+
+                <h1>
+
+                    Intelligence
+
+                    <span class="gradient-text">
+                        That Gets Things Done.
+                    </span>
+
+                </h1>
+
+                <p class="hero-description">
+
+                    NEXORA AI brings intelligent agents, automated
+                    workflows, real-time analytics and connected
+                    systems together in one powerful platform.
+
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="#features"
+                       class="btn btn-primary">
+
+                        Explore Solutions
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </a>
+
+                    <a href="#workflow"
+                       class="btn btn-outline">
+
+                        <i class="fa-solid fa-play"></i>
+
+                        See How It Works
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="ai-visual reveal">
+
+                <div class="orb"></div>
+
+                <div class="floating-card card-1">
+
+                    <small>AI Agents</small>
+
+                    <strong>
+                        Online
+                    </strong>
+
+                </div>
+
+                <div class="floating-card card-2">
+
+                    <small>Workflow</small>
+
+                    <strong>
+                        Running
+                    </strong>
+
+                </div>
+
+                <div class="floating-card card-3">
+
+                    <small>System Status</small>
+
+                    <strong>
+                        Operational
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PRODUCT CAPABILITIES -->
+
+<section class="stats">
+
+    <div class="container">
+
+        <div class="stats-grid reveal">
+
+            <div class="stat">
+
+                <h3>AI</h3>
+
+                <p>Intelligent Agents</p>
+
+            </div>
+
+            <div class="stat">
+
+                <h3>24/7</h3>
+
+                <p>Automated Workflows</p>
+
+            </div>
+
+            <div class="stat">
+
+                <h3>Real-Time</h3>
+
+                <p>System Analytics</p>
+
+            </div>
+
+            <div class="stat">
+
+                <h3>API</h3>
+
+                <p>Connected Ecosystem</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FEATURES -->
+
+<section id="features">
+
+    <div class="container">
+
+        <div class="section-heading reveal">
+
+            <div class="section-label">
+                Platform Capabilities
+            </div>
+
+            <h2>
+                Everything needed
+                for intelligent operations.
+            </h2>
+
+            <p>
+                Build, connect and manage AI-powered systems
+                without turning every process into a manual task.
+            </p>
+
+        </div>
+
+
+        <div class="features-grid">
+
+            <article class="feature-card reveal">
+
+                <div class="feature-icon">
+                    <i class="fa-solid fa-robot"></i>
+                </div>
+
+                <h3>
+                    AI Agents
+                </h3>
+
+                <p>
+                    Deploy intelligent agents that can understand
+                    context, process information and perform
+                    defined tasks across your workflows.
+                </p>
+
+            </article>
+
+
+            <article class="feature-card reveal">
+
+                <div class="feature-icon">
+                    <i class="fa-solid fa-bolt"></i>
+                </div>
+
+                <h3>
+                    Workflow Automation
+                </h3>
+
+                <p>
+                    Transform repetitive processes into
+                    automated workflows triggered by events,
+                    schedules and system activity.
+                </p>
+
+            </article>
+
+
+            <article class="feature-card reveal">
+
+                <div class="feature-icon">
+                    <i class="fa-solid fa-chart-line"></i>
+                </div>
+
+                <h3>
+                    Intelligent Analytics
+                </h3>
+
+                <p>
+                    Monitor operational activity and turn
+                    structured data into useful insights,
+                    trends and performance signals.
+                </p>
+
+            </article>
+
+
+            <article class="feature-card reveal">
+
+                <div class="feature-icon">
+                    <i class="fa-solid fa-database"></i>
+                </div>
+
+                <h3>
+                    Data Intelligence
+                </h3>
+
+                <p>
+                    Process information from multiple sources
+                    and create a connected foundation for
+                    intelligent decision systems.
+                </p>
+
+            </article>
+
+
+            <article class="feature-card reveal">
+
+                <div class="feature-icon">
+                    <i class="fa-solid fa-network-wired"></i>
+                </div>
+
+                <h3>
+                    Connected Integrations
+                </h3>
+
+                <p>
+                    Connect APIs, databases, applications and
+                    external services to create one unified
+                    automation environment.
+                </p>
+
+            </article>
+
+
+            <article class="feature-card reveal">
+
+                <div class="feature-icon">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+
+                <h3>
+                    Security & Control
+                </h3>
+
+                <p>
+                    Keep automation manageable with controlled
+                    access, workflow visibility, monitoring and
+                    responsible AI practices.
+                </p>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- WORKFLOW -->
+
+<section class="workflow"
+         id="workflow">
+
+    <div class="container">
+
+        <div class="section-heading reveal">
+
+            <div class="section-label">
+                Intelligent Workflow
+            </div>
+
+            <h2>
+                From information to action.
+            </h2>
+
+            <p>
+                NEXORA connects data, intelligence and
+                automation into a single operational flow.
+            </p>
+
+        </div>
+
+
+        <div class="workflow-grid">
+
+            <div class="workflow-step reveal">
+
+                <div class="step-number">
+                    01
+                </div>
+
+                <h3>
+                    Connect
+                </h3>
+
+                <p>
+                    Bring together applications,
+                    databases and information sources.
+                </p>
+
+            </div>
+
+
+            <div class="workflow-step reveal">
+
+                <div class="step-number">
+                    02
+                </div>
+
+                <h3>
+                    Understand
+                </h3>
+
+                <p>
+                    AI processes context, information
+                    and signals from connected sources.
+                </p>
+
+            </div>
+
+
+            <div class="workflow-step reveal">
+
+                <div class="step-number">
+                    03
+                </div>
+
+                <h3>
+                    Decide
+                </h3>
+
+                <p>
+                    Intelligent logic determines the
+                    appropriate next step.
+                </p>
+
+            </div>
+
+
+            <div class="workflow-step reveal">
+
+                <div class="step-number">
+                    04
+                </div>
+
+                <h3>
+                    Execute
+                </h3>
+
+                <p>
+                    Automated workflows perform the
+                    configured actions.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ANALYTICS -->
+
+<section id="analytics">
+
+    <div class="container">
+
+        <div class="dashboard">
+
+            <div class="dashboard-info reveal">
+
+                <div class="section-label">
+                    AI Operations
+                </div>
+
+                <h2>
+                    One view for
+                    intelligent operations.
+                </h2>
+
+                <p>
+                    Monitor workflows, understand system
+                    activity and track operational signals
+                    through a centralized analytics layer.
+                </p>
+
+                <ul class="check-list">
+
+                    <li>
+                        <i class="fa-solid fa-circle-check"></i>
+                        Workflow monitoring
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-circle-check"></i>
+                        AI-generated insights
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-circle-check"></i>
+                        Activity tracking
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-circle-check"></i>
+                        Performance visibility
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div class="dashboard-panel reveal">
+
+                <div class="panel-header">
+
+                    <div class="panel-title">
+                        Automation Activity
+                    </div>
+
+                    <div class="status">
+                        ● SYSTEM READY
+                    </div>
+
+                </div>
+
+
+                <div class="chart">
+
+                    <div class="bar"
+                         style="height:45%">
+                    </div>
+
+                    <div class="bar"
+                         style="height:58%">
+                    </div>
+
+                    <div class="bar"
+                         style="height:50%">
+                    </div>
+
+                    <div class="bar"
+                         style="height:73%">
+                    </div>
+
+                    <div class="bar"
+                         style="height:66%">
+                    </div>
+
+                    <div class="bar"
+                         style="height:85%">
+                    </div>
+
+                    <div class="bar"
+                         style="height:94%">
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- INTEGRATIONS -->
+
+<section id="integrations">
+
+    <div class="container">
+
+        <div class="section-heading reveal">
+
+            <div class="section-label">
+                Connected Ecosystem
+            </div>
+
+            <h2>
+                Connect the tools
+                your business already uses.
+            </h2>
+
+            <p>
+                Build automation around your existing
+                applications, APIs and data sources.
+            </p>
+
+        </div>
+
+
+        <div class="integrations-grid">
+
+            <div class="integration reveal">
+
+                <i class="fa-solid fa-database"></i>
+
+                <h3>
+                    Databases
+                </h3>
+
+                <p>
+                    Structured business data
+                </p>
+
+            </div>
+
+
+            <div class="integration reveal">
+
+                <i class="fa-solid fa-cloud"></i>
+
+                <h3>
+                    Cloud Services
+                </h3>
+
+                <p>
+                    Cloud-based applications
+                </p>
+
+            </div>
+
+
+            <div class="integration reveal">
+
+                <i class="fa-solid fa-code"></i>
+
+                <h3>
+                    REST APIs
+                </h3>
+
+                <p>
+                    Custom integrations
+                </p>
+
+            </div>
+
+
+            <div class="integration reveal">
+
+                <i class="fa-solid fa-envelope"></i>
+
+                <h3>
+                    Communication
+                </h3>
+
+                <p>
+                    Messaging & notifications
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SECURITY -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-heading reveal">
+
+            <div class="section-label">
+                Built With Control
+            </div>
+
+            <h2>
+                Automation with
+                visibility and responsibility.
+            </h2>
+
+            <p>
+                Intelligent systems should remain understandable,
+                controllable and observable.
+            </p>
+
+        </div>
+
+
+        <div class="security-grid">
+
+            <article class="security-card reveal">
+
+                <i class="fa-solid fa-user-shield"></i>
+
+                <h3>
+                    Access Control
+                </h3>
+
+                <p>
+                    Define who can access systems,
+                    workflows and operational resources.
+                </p>
+
+            </article>
+
+
+            <article class="security-card reveal">
+
+                <i class="fa-solid fa-eye"></i>
+
+                <h3>
+                    Visibility
+                </h3>
+
+                <p>
+                    Monitor workflow activity and
+                    understand what automated systems are doing.
+                </p>
+
+            </article>
+
+
+            <article class="security-card reveal">
+
+                <i class="fa-solid fa-lock"></i>
+
+                <h3>
+                    Responsible AI
+                </h3>
+
+                <p>
+                    Build automation with appropriate
+                    human oversight, data protection and controls.
+                </p>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- PRICING -->
+<section id="pricing">
+    <div class="container">
+        <div class="section-heading reveal">
+            <div class="section-label">Flexible Plans</div>
+            <h2>Start small. Scale intelligently.</h2>
+            <p>Choose a starting point for your automation journey. These are example plan structures; customize features and prices before publishing.</p>
+        </div>
+        <div class="pricing-grid">
+            <article class="price-card reveal">
+                <span class="plan-label">Starter</span>
+                <h3>Explore</h3>
+                <p class="plan-description">For individuals testing practical AI workflows.</p>
+                <div class="price">Free <span>/ to get started</span></div>
+                <ul>
+                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> Basic workflow planning</li>
+                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> Core platform overview</li>
+                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> Guided setup resources</li>
+                </ul>
+                <a href="#contact" class="btn btn-outline">Get Started</a>
+            </article>
+            <article class="price-card featured reveal">
+                <span class="plan-label">Professional</span>
+                <h3>Build</h3>
+                <p class="plan-description">For teams connecting workflows and business tools.</p>
+                <div class="price">Let’s talk <span>/ tailored plan</span></div>
+                <ul>
+                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> Workflow automation design</li>
+                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> API and data integrations</li>
+                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> Monitoring and reporting</li>
+                </ul>
+                <a href="#contact" class="btn btn-primary">Discuss Your Needs</a>
+            </article>
+            <article class="price-card reveal">
+                <span class="plan-label">Enterprise</span>
+                <h3>Scale</h3>
+                <p class="plan-description">For organizations with advanced governance needs.</p>
+                <div class="price">Custom <span>/ based on scope</span></div>
+                <ul>
+                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> Custom integrations</li>
+                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> Access and oversight planning</li>
+                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> Implementation support</li>
+                </ul>
+                <a href="#contact" class="btn btn-outline">Contact Us</a>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- TESTIMONIALS / TRUST
+     Replace these clearly marked demo quotes with verified customer feedback before publishing. -->
+<section id="testimonials" class="workflow">
+    <div class="container">
+        <div class="section-heading reveal">
+            <div class="section-label">Built for Better Workflows</div>
+            <h2>Designed around real team needs.</h2>
+            <p>Clear visibility, connected systems and human oversight help teams build automation they can understand and manage.</p>
+        </div>
+        <div class="testimonials-grid">
+            <article class="testimonial-card reveal">
+                <div class="testimonial-stars" aria-label="Demo rating">★★★★★</div>
+                <blockquote>“The clearest value comes from mapping a repetitive process first, then automating the steps that genuinely benefit from it.”</blockquote>
+                <div class="testimonial-person">
+                    <div class="testimonial-avatar" aria-hidden="true">W</div>
+                    <div><strong>Workflow Planning</strong><small>Illustrative demo quote</small></div>
+                </div>
+            </article>
+            <article class="testimonial-card reveal">
+                <div class="testimonial-stars" aria-label="Demo rating">★★★★★</div>
+                <blockquote>“Keeping activity visible makes it easier for a team to review what an automated workflow did and where a person should step in.”</blockquote>
+                <div class="testimonial-person">
+                    <div class="testimonial-avatar" aria-hidden="true">O</div>
+                    <div><strong>Operations Team</strong><small>Illustrative demo quote</small></div>
+                </div>
+            </article>
+            <article class="testimonial-card reveal">
+                <div class="testimonial-stars" aria-label="Demo rating">★★★★★</div>
+                <blockquote>“A connected approach helps teams think beyond isolated tools and design a more consistent process from start to finish.”</blockquote>
+                <div class="testimonial-person">
+                    <div class="testimonial-avatar" aria-hidden="true">I</div>
+                    <div><strong>Integration Strategy</strong><small>Illustrative demo quote</small></div>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+
+<section id="contact">
+
+    <div class="container">
+
+        <div class="cta reveal">
+
+            <div class="section-label">
+                Start Automating
+            </div>
+
+            <h2>
+                Turn intelligent ideas
+                into real workflows.
+            </h2>
+
+            <p>
+                Connect your systems, introduce AI into your
+                processes and build automation around the work
+                that matters.
+            </p>
+
+            <a href="mailto:contact@nexora.ai"
+               class="btn btn-primary">
+
+                Get Started
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div class="container">
+
+        <div class="footer-grid">
+
+            <div class="footer-brand">
+
+                <a href="#"
+                   class="logo">
+
+                    <div class="logo-icon">
+                        <i class="fa-solid fa-brain"></i>
+                    </div>
+
+                    <span>
+                        NEXORA AI
+                    </span>
+
+                </a>
+
+                <p>
+                    Intelligent automation technology designed
+                    to connect systems, understand information
+                    and turn workflows into action.
+                </p>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>
+                    Platform
+                </h4>
+
+                <a href="#features">
+                    AI Agents
+                </a>
+
+                <a href="#features">
+                    Automation
+                </a>
+
+                <a href="#analytics">
+                    Analytics
+                </a>
+
+                <a href="#workflow">
+                    Workflows
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>
+                    Solutions
+                </h4>
+
+                <a href="#features">
+                    Data Intelligence
+                </a>
+
+                <a href="#features">
+                    AI Operations
+                </a>
+
+                <a href="#integrations">
+                    Integrations
+                </a>
+
+                <a href="#contact">
+                    Get Started
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>
+                    Connect
+                </h4>
+
+                <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">
+                    LinkedIn
+                </a>
+
+                <a href="https://github.com/" target="_blank" rel="noopener noreferrer">
+                    GitHub
+                </a>
+
+                <a href="https://x.com/" target="_blank" rel="noopener noreferrer">
+                    X / Twitter
+                </a>
+
+                <a href="mailto:contact@nexora.ai">
+                    Contact
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <span>
+                © 2026 NEXORA AI. All rights reserved.
+            </span>
+
+            <span>
+                Intelligent automation for modern operations.
+            </span>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<script>
+
+    /* =========================
+       MOBILE MENU
+    ========================== */
+
+    const menuBtn =
+        document.getElementById("menuBtn");
+
+    const navLinks =
+        document.getElementById("navLinks");
+
+    menuBtn.addEventListener(
+        "click",
+        () => {
+
+            const isOpen = navLinks.classList.toggle("active");
+            menuBtn.setAttribute("aria-expanded", String(isOpen));
+            menuBtn.setAttribute("aria-label", isOpen ? "Close navigation menu" : "Open navigation menu");
+            const icon = menuBtn.querySelector("i");
+            icon.classList.toggle("fa-bars", !isOpen);
+            icon.classList.toggle("fa-xmark", isOpen);
+
+        }
+    );
+
+
+    /* =========================
+       CLOSE MOBILE MENU
+    ========================== */
+
+    document
+        .querySelectorAll(".nav-links a")
+        .forEach(link => {
+
+            link.addEventListener(
+                "click",
+                () => {
+
+                    navLinks.classList.remove("active");
+                    menuBtn.setAttribute("aria-expanded", "false");
+                    menuBtn.setAttribute("aria-label", "Open navigation menu");
+                    const icon = menuBtn.querySelector("i");
+                    icon.classList.add("fa-bars");
+                    icon.classList.remove("fa-xmark");
+
+                }
+            );
+
+        });
+
+
+    /* =========================
+       SCROLL REVEAL
+    ========================== */
+
+    const revealElements =
+        document.querySelectorAll(
+            ".reveal"
+        );
+
+    const observer =
+        new IntersectionObserver(
+
+            entries => {
+
+                entries.forEach(
+                    entry => {
+
+                        if (
+                            entry.isIntersecting
+                        ) {
+
+                            entry.target.classList.add(
+                                "active"
+                            );
+
+                        }
+
+                    }
+                );
+
+            },
+
+            {
+                threshold: .12
+            }
+
+        );
+
+    revealElements.forEach(
+        element => {
+
+            observer.observe(
+                element
+            );
+
+        }
+    );
+
+
+    /* =========================
+       HEADER EFFECT
+    ========================== */
+
+    const header =
+        document.querySelector("header");
+
+    window.addEventListener(
+        "scroll",
+        () => {
+
+            if (
+                window.scrollY > 40
+            ) {
+
+                header.style.boxShadow =
+                    "0 10px 40px rgba(0,0,0,.25)";
+
+            } else {
+
+                header.style.boxShadow =
+                    "none";
+
+            }
+
+        }
+    );
+
+
+    /* =========================
+       BUTTON PRESS EFFECT
+    ========================== */
+
+    document
+        .querySelectorAll(".btn")
+        .forEach(button => {
+
+            button.addEventListener(
+                "click",
+                () => {
+
+                    button.style.transform =
+                        "scale(.97)";
+
+                    setTimeout(
+                        () => {
+
+                            button.style.transform =
+                                "";
+
+                        },
+                        120
+                    );
+
+                }
+            );
+
+        });
+
+</script>
+
+</body>
+</html>
